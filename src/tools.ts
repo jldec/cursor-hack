@@ -2,11 +2,11 @@
  * Tool definitions for the AI chat agent
  * Tools can either require human confirmation or execute automatically
  */
-import { tool } from "ai";
-import { z } from "zod";
+import { tool } from 'ai'
+import { z } from 'zod'
 
-import type { Chat } from "./server";
-import { getCurrentAgent } from "agents";
+import type { Chat } from './server'
+import { getCurrentAgent } from 'agents'
 
 /**
  * Local time tool that executes automatically
@@ -14,14 +14,13 @@ import { getCurrentAgent } from "agents";
  * This is suitable for low-risk operations that don't need oversight
  */
 const getLocalTime = tool({
-  description: "get the local time for a specified location",
+  description: 'get the local time for a specified location',
   parameters: z.object({ location: z.string() }),
   execute: async ({ location }) => {
-    console.log(`Getting local time for ${location}`);
-    return "10am";
-  },
-});
-
+    console.log(`Getting local time for ${location}`)
+    return '10am'
+  }
+})
 
 /**
  * Add a MCP server URL to the MCP client
@@ -92,5 +91,4 @@ export const tools = {
  * Each function here corresponds to a tool above that doesn't have an execute function
  * NOTE: keys below should match toolsRequiringConfirmation in app.tsx
  */
-export const executions = {
-};
+export const executions = {}

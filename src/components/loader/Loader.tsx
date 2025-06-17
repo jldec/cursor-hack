@@ -1,14 +1,10 @@
 type LoaderProps = {
-  className?: string;
-  size?: number;
-  title?: string;
-};
+  className?: string
+  size?: number
+  title?: string
+}
 
-export const Loader = ({
-  className,
-  size = 24,
-  title = "Loading...",
-}: LoaderProps) => (
+export const Loader = ({ className, size = 24, title = 'Loading...' }: LoaderProps) => (
   <svg
     width="24"
     height="24"
@@ -19,14 +15,7 @@ export const Loader = ({
     style={{ height: size ?? undefined, width: size ?? undefined }}
   >
     <title>{title}</title>
-    <circle
-      cx="12"
-      cy="12"
-      r="9.5"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-    >
+    <circle cx="12" cy="12" r="9.5" fill="none" strokeWidth="2" strokeLinecap="round">
       <animateTransform
         attributeName="transform"
         type="rotate"
@@ -52,14 +41,6 @@ export const Loader = ({
         repeatCount="indefinite"
       />
     </circle>
-    <circle
-      cx="12"
-      cy="12"
-      r="9.5"
-      fill="none"
-      opacity={0.1}
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
+    <circle cx="12" cy="12" r="9.5" fill="none" opacity={0.1} strokeWidth="2" strokeLinecap="round" />
   </svg>
-);
+)
